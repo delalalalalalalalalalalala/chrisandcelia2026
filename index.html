@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=780">
+    <title>Chris &amp; Celia :: May 30, 2026 :: Vashon Island</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="wrapper">
+
+    <marquee class="top-marquee" behavior="scroll" direction="left" scrollamount="3">
+        ★ WELCOME TO OUR WEDDING WEBSITE ★ MAY 30, 2026 ★ VASHON ISLAND, WA ★ WE ARE SO EXCITED TO SEE YOU ★ RSVP BY APRIL 1, 2026 ★
+    </marquee>
+
+    <div id="header">
+        <div class="site-title">Chris &amp; Celia</div>
+        <p class="wedding-info">May 30, 2026 &nbsp;&nbsp;·&nbsp;&nbsp; Vashon Island, Washington</p>
+        <div id="countdown">
+            <span id="cd-days">--</span>d &nbsp;
+            <span id="cd-hours">--</span>h &nbsp;
+            <span id="cd-mins">--</span>min &nbsp;
+            <span id="cd-secs">--</span>s
+        </div>
+    </div>
+
+    <div id="nav">
+        <a href="index.html" class="nav-btn current">HOME</a>
+        <a href="schedule.html" class="nav-btn">SCHEDULE</a>
+        <a href="things-to-do.html" class="nav-btn">THINGS TO DO</a>
+        <a href="faq.html" class="nav-btn">FAQs</a>
+    </div>
+
+    <div id="main">
+
+        <div id="welcome-section">
+            <h2>Welcome!</h2>
+            <p>We are so excited to spend an entire weekend with our friends and family!</p>
+            <p>We have several events planned, but also left some &ldquo;flexi&rdquo; time during the day on Saturday for guests to explore the island.</p>
+            <p>Arrival and departure are flexible based on your needs&nbsp;/&nbsp;travel arrangements. We understand that not everyone may be able to join for both nights so please let us know if that is the case.</p>
+        </div>
+
+        <hr>
+
+        <div id="photo-preview">
+            <h2>A Peek at Chris and Celia</h2>
+            <div class="photo-grid">
+                <!-- Drop your photos into the images/ folder and update the src paths below -->
+                <div class="photo-cell"><img src="images/photo1.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
+                <div class="photo-cell"><img src="images/photo2.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
+                <div class="photo-cell"><img src="images/photo3.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
+                <div class="photo-cell"><img src="images/photo4.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
+                <div class="photo-cell"><img src="images/photo5.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
+                <div class="photo-cell"><img src="images/photo6.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
+            </div>
+            <a href="#" class="view-photos-link">View all photos &raquo;</a>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <p class="hit-counter-label">Visitor Count</p>
+        <div id="hit-counter-display"><span id="hit-count">01247</span></div>
+        <p style="margin-top:10px;">&copy; Chris De La Fuente &amp; Celia McTigue &nbsp;&middot;&nbsp; 2026</p>
+        <p class="footer-note">Best viewed in Internet Explorer 6.0 at 800&times;600 resolution</p>
+    </div>
+
+</div>
+
+<script src="js/countdown.js"></script>
+<script>
+    var stored = parseInt(localStorage.getItem('ccw_visits') || '1247');
+    stored++;
+    localStorage.setItem('ccw_visits', stored);
+    document.getElementById('hit-count').textContent = String(stored).padStart(5, '0');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,519 @@
+/* ============================================
+   CHRIS & CELIA :: VASHON ISLAND :: 2026
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #7CFC00;
+    font-family: Georgia, 'Times New Roman', serif;
+    padding: 12px;
+    min-height: 100vh;
+}
+
+/* ---- CONTAINER ---- */
+#wrapper {
+    width: 780px;
+    margin: 0 auto;
+    background: #FFFEF5;
+    border: 4px double #FF1493;
+    box-shadow: 8px 8px 0 #228B22;
+}
+
+/* ---- MARQUEE ---- */
+.top-marquee {
+    background-color: #FF1493;
+    color: #FFFF00;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    display: block;
+}
+
+/* ---- HEADER ---- */
+#header {
+    padding: 25px 20px 15px;
+    text-align: center;
+    background: #FFFFFF;
+    border-bottom: 4px solid #FF1493;
+}
+
+.site-title {
+    font-family: Impact, 'Arial Black', Arial, sans-serif;
+    font-size: 78px;
+    font-weight: 900;
+    color: #FF1493;
+    text-shadow:
+        2px 2px 0 #FF69B4,
+        4px 4px 0 #FF1493,
+        6px 6px 0 #C71585,
+        8px 8px 0 #8B0057;
+    letter-spacing: -3px;
+    transform: skewX(-5deg);
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.wedding-info {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: #006400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 8px 0;
+}
+
+#countdown {
+    display: inline-block;
+    background: #000022;
+    color: #00FF41;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 8px 22px;
+    margin: 12px auto;
+    border: 2px solid #00AA22;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+/* ---- NAVIGATION ---- */
+#nav {
+    background: linear-gradient(to bottom, #d8d8d8 0%, #b8b8b8 100%);
+    padding: 9px 10px;
+    text-align: center;
+    border-top: 2px solid #f0f0f0;
+    border-bottom: 3px solid #808080;
+}
+
+.nav-btn {
+    background: linear-gradient(to bottom,
+        #f8f8f8 0%,
+        #ececec 4%,
+        #d4d4d4 50%,
+        #bcbcbc 96%,
+        #acacac 100%
+    );
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #eeeeee;
+    border-right: 2px solid #707070;
+    border-bottom: 2px solid #585858;
+    padding: 6px 18px;
+    font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #111;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    color: #CC0066;
+    background: linear-gradient(to bottom,
+        #ffffff 0%,
+        #f4f4f4 4%,
+        #dcdcdc 50%,
+        #cccccc 96%,
+        #bcbcbc 100%
+    );
+}
+
+.nav-btn.current,
+.nav-btn:active {
+    background: linear-gradient(to bottom,
+        #a8a8a8 0%,
+        #b4b4b4 50%,
+        #c4c4c4 100%
+    );
+    border-top: 2px solid #606060;
+    border-left: 2px solid #747474;
+    border-right: 2px solid #e8e8e8;
+    border-bottom: 2px solid #f4f4f4;
+    color: #CC0066;
+}
+
+/* ---- CONTENT AREA ---- */
+#main {
+    padding: 25px;
+}
+
+h2 {
+    font-size: 26px;
+    margin: 20px 0 12px;
+    padding-bottom: 5px;
+}
+
+/* ---- WELCOME SECTION ---- */
+#welcome-section {
+    background: #FFFDE7;
+    border: 2px solid #DAA520;
+    border-left: 5px solid #FF1493;
+    padding: 18px 20px;
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #333;
+}
+
+#welcome-section h2 {
+    font-family: 'Times New Roman', serif;
+    color: #CC0066;
+    border-bottom: 2px solid #7CFC00;
+    margin-top: 0;
+}
+
+#welcome-section p {
+    margin-top: 12px;
+}
+
+/* ---- PHOTO PREVIEW ---- */
+#photo-preview {
+    background: #FFF0F5;
+    border: 2px dashed #FF69B4;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#photo-preview h2 {
+    font-family: Impact, sans-serif;
+    color: #006400;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #FF1493;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.photo-cell {
+    background: #e0e0e0;
+    height: 180px;
+    overflow: hidden;
+    border: 2px inset #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+}
+
+.photo-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.view-photos-link {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #0000CC;
+    text-decoration: underline;
+}
+
+/* ---- HR ---- */
+hr {
+    border: none;
+    border-top: 2px solid #FF69B4;
+    margin: 20px 0;
+}
+
+hr.thick {
+    border-top: 4px double #7CFC00;
+}
+
+/* ---- FOOTER ---- */
+#footer {
+    background: #000033;
+    color: #AAAAAA;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    text-align: center;
+    padding: 15px 10px;
+    border-top: 4px solid #FF1493;
+}
+
+#footer p {
+    margin: 4px 0;
+}
+
+#footer a {
+    color: #FF69B4;
+    text-decoration: none;
+}
+
+.hit-counter-label {
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 3px !important;
+}
+
+#hit-counter-display {
+    display: inline-block;
+    background: #000;
+    border: 2px inset #444;
+    padding: 3px 10px;
+    font-size: 22px;
+    letter-spacing: 6px;
+    color: #FF4444;
+    font-family: 'Courier New', monospace;
+}
+
+.footer-note {
+    color: #444 !important;
+    font-size: 10px !important;
+    margin-top: 8px !important;
+}
+
+/* ============================================
+   SCHEDULE PAGE
+   ============================================ */
+
+.page-heading {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #FF1493;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 4px double #7CFC00;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.page-intro {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.schedule-day {
+    margin-bottom: 30px;
+    border: 2px solid #e0e0e0;
+}
+
+.day-header {
+    background: #FF1493;
+    color: white;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    margin: 0;
+}
+
+.day-header.saturday {
+    background: #006400;
+}
+
+.day-header.sunday {
+    background: #000033;
+}
+
+.event-row {
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    padding: 11px 15px;
+    align-items: flex-start;
+}
+
+.event-row:last-child {
+    border-bottom: none;
+}
+
+.event-row:nth-child(even) { background: #FFFDE7; }
+.event-row:nth-child(odd)  { background: white; }
+
+.event-row.highlight {
+    background: #FFF0F5 !important;
+    border-left: 4px solid #FF1493;
+}
+
+.event-time {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #888;
+    width: 155px;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+.event-info { flex: 1; }
+
+.event-name {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 2px;
+}
+
+.event-note {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+}
+
+/* ============================================
+   THINGS TO DO PAGE
+   ============================================ */
+
+.places-intro {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.place-item {
+    overflow: hidden;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.place-item:last-child {
+    border-bottom: none;
+}
+
+.place-photo {
+    float: left;
+    margin: 0 18px 10px 0;
+}
+
+.place-item.reverse .place-photo {
+    float: right;
+    margin: 0 0 10px 18px;
+}
+
+.place-photo-box {
+    width: 220px;
+    height: 160px;
+    border: 3px solid #ccc;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: block;
+}
+
+.place-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.place-photo-placeholder {
+    width: 220px;
+    height: 160px;
+    border: 3px solid #ccc;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: #bbb;
+}
+
+.place-photo-placeholder span {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    color: #ccc;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.place-name {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #006400;
+    margin: 0 0 4px;
+}
+
+.place-address {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.place-desc {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+}
+
+/* ============================================
+   FAQ PAGE
+   ============================================ */
+
+.faq-section {
+    margin-bottom: 22px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.faq-section:last-child {
+    border-bottom: none;
+}
+
+.faq-q {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.faq-q::before {
+    content: '★ ';
+    color: #FF1493;
+}
+
+.faq-a {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    border-left: 3px solid #7CFC00;
+    padding-left: 15px;
+    margin-left: 5px;
+}
+
+.faq-a p + p {
+    margin-top: 10px;
+}
