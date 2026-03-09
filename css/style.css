@@ -20,14 +20,15 @@ body {
 /* ---- CONTAINER ---- */
 #wrapper {
     width: 988px;
-    margin: -35px auto 0;
+    margin: 0 auto;
 }
 
 /* ---- HEADER: photo bleeds left, title centered ---- */
 #header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
+    padding-bottom: 35px;
 }
 
 #header-photo {
