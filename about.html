@@ -32,6 +32,8 @@
             transform: scale(1.6);
             z-index: 10;
         }
+        /* allow expanded photos to overflow the container */
+        #main, #col-full { overflow: visible; }
     </style>
 </head>
 <body>
@@ -123,6 +125,20 @@
 </div>
 
 <script src="js/countdown.js"></script>
+<script>
+(function () {
+    var photos = [
+        '/images/photo-01.jpg','/images/photo-02.jpg','/images/photo-03.jpg',
+        '/images/photo-04.jpg','/images/photo-05.jpg','/images/photo-06.jpg',
+        '/images/photo-07.jpg','/images/photo-08.jpg','/images/photo-09.jpg',
+        '/images/photo-10.jpg','/images/photo-11.jpg','/images/photo-12.jpg',
+        '/images/photo-13.jpg','/images/photo-14.jpg','/images/photo-15.jpg',
+        '/images/photo-16.jpg'
+    ];
+    var img = document.querySelector('#header-photo img');
+    if (img) img.src = photos[Math.floor(Math.random() * photos.length)];
+})();
+</script>
 <script>
     document.querySelectorAll('.about-photo').forEach(function (el) {
         el.addEventListener('click', function () {
