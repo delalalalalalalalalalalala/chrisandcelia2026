@@ -33,16 +33,20 @@ body {
 #header-photo {
     flex-shrink: 0;
     width: 300px;
+    height: 300px;
+    overflow: hidden;
 }
 
 #header-spacer {
     width: 300px;
+    height: 300px;
     flex-shrink: 0;
 }
 
 #header-photo img {
     width: 300px;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
     display: block;
 }
 
