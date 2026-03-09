@@ -7,7 +7,39 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .page-heading { font-size: 43px; }
-        p             { font-size: 22px; }
+        .places-intro { font-size: 22px; }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #e8e8e8;
+            border: 1px solid #aaa;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .about-photo.expanded {
+            grid-column: 1 / -1;
+            aspect-ratio: unset;
+            height: 520px;
+        }
     </style>
 </head>
 <body>
@@ -68,7 +100,20 @@
         <div id="col-full">
 
             <h1 class="page-heading">About Us</h1>
-            <p>Content coming soon.</p>
+            <p class="places-intro">A little bit about Chris and Celia &mdash; how we got here and why we&rsquo;re so excited to celebrate with you.</p>
+
+            <div class="about-grid">
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+                <div class="about-photo">photo coming</div>
+            </div>
 
         </div>
     </div>
@@ -80,6 +125,13 @@
 </div>
 
 <script src="js/countdown.js"></script>
+<script>
+    document.querySelectorAll('.about-photo').forEach(function (el) {
+        el.addEventListener('click', function () {
+            el.classList.toggle('expanded');
+        });
+    });
+</script>
 
 <div id="bouncing-heart">
     <img src="images/chromeheart.png" alt="Chrome Heart" id="heart-img">
@@ -90,13 +142,20 @@
     var el  = document.getElementById('bouncing-heart');
     var img = document.getElementById('heart-img');
     var speed = 2.5;
-    var angle = (Math.random() * 60 + 15) * (Math.PI / 180);
-    var dx = Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
-    var dy = Math.sin(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
-    var x = Math.random() * (window.innerWidth - 300);
-    var y = Math.random() * (window.innerHeight - 300);
+    var saved = JSON.parse(localStorage.getItem('heartState') || 'null');
+    var dx, dy, x, y;
+    if (saved && saved.x < window.innerWidth && saved.y < window.innerHeight) {
+        x = saved.x; y = saved.y; dx = saved.dx; dy = saved.dy;
+    } else {
+        var angle = (Math.random() * 60 + 15) * (Math.PI / 180);
+        dx = Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+        dy = Math.sin(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+        x = Math.random() * (window.innerWidth - 300);
+        y = Math.random() * (window.innerHeight - 300);
+    }
     var rotation = 0;
     var spinning = false;
+    var frameCount = 0;
 
     el.style.left = x + 'px';
     el.style.top  = y + 'px';
@@ -126,6 +185,9 @@
 
         el.style.left = x + 'px';
         el.style.top  = y + 'px';
+        if (++frameCount % 60 === 0) {
+            localStorage.setItem('heartState', JSON.stringify({x:x, y:y, dx:dx, dy:dy}));
+        }
         requestAnimationFrame(bounce);
     }
 

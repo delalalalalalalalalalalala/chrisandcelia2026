@@ -94,13 +94,20 @@
     var el  = document.getElementById('bouncing-heart');
     var img = document.getElementById('heart-img');
     var speed = 2.5;
-    var angle = (Math.random() * 60 + 15) * (Math.PI / 180);
-    var dx = Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
-    var dy = Math.sin(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
-    var x = Math.random() * (window.innerWidth - 300);
-    var y = Math.random() * (window.innerHeight - 300);
+    var saved = JSON.parse(localStorage.getItem('heartState') || 'null');
+    var dx, dy, x, y;
+    if (saved && saved.x < window.innerWidth && saved.y < window.innerHeight) {
+        x = saved.x; y = saved.y; dx = saved.dx; dy = saved.dy;
+    } else {
+        var angle = (Math.random() * 60 + 15) * (Math.PI / 180);
+        dx = Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+        dy = Math.sin(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+        x = Math.random() * (window.innerWidth - 300);
+        y = Math.random() * (window.innerHeight - 300);
+    }
     var rotation = 0;
     var spinning = false;
+    var frameCount = 0;
 
     el.style.left = x + 'px';
     el.style.top  = y + 'px';
@@ -130,6 +137,9 @@
 
         el.style.left = x + 'px';
         el.style.top  = y + 'px';
+        if (++frameCount % 60 === 0) {
+            localStorage.setItem('heartState', JSON.stringify({x:x, y:y, dx:dx, dy:dy}));
+        }
         requestAnimationFrame(bounce);
     }
 
