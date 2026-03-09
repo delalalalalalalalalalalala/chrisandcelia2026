@@ -46,7 +46,8 @@ body {
 #header-photo img {
     width: 300px;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: bottom left;
     display: block;
 }
 
