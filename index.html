@@ -5,75 +5,140 @@
     <meta name="viewport" content="width=780">
     <title>Chris &amp; Celia :: May 30, 2026 :: Vashon Island</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-heading { font-size: 43px; }
+        p             { font-size: 22px; }
+    </style>
 </head>
 <body>
 
-<div id="wrapper">
-
-    <marquee class="top-marquee" behavior="scroll" direction="left" scrollamount="3">
-        ★ WELCOME TO OUR WEDDING WEBSITE ★ MAY 30, 2026 ★ VASHON ISLAND, WA ★ WE ARE SO EXCITED TO SEE YOU ★ RSVP BY APRIL 1, 2026 ★
-    </marquee>
-
-    <div id="header">
+<div id="header">
+    <div id="header-photo">
+        <img src="images/header-photo.jpg" alt="Chris and Celia"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none;">[ photo ]</div>
+    </div>
+    <div id="header-info">
         <div class="site-title">Chris &amp; Celia</div>
-        <p class="wedding-info">May 30, 2026 &nbsp;&nbsp;·&nbsp;&nbsp; Vashon Island, Washington</p>
+        <p class="wedding-info">May 30, 2026 &nbsp;&middot;&nbsp; Vashon Island, Washington</p>
         <div id="countdown">
-            <span id="cd-days">--</span>d &nbsp;
-            <span id="cd-hours">--</span>h &nbsp;
-            <span id="cd-mins">--</span>min &nbsp;
-            <span id="cd-secs">--</span>s
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-days"><span class="cd-tile">-</span><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">days</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-hours"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">hrs</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-mins"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">min</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-secs"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">sec</span>
+            </div>
         </div>
     </div>
+    <div id="header-spacer"></div>
+</div>
+
+<div id="wrapper">
+
+    <div id="please-note">
+        <p><strong><u><a href="https://docs.google.com/forms/d/e/1FAIpQLSfmuHdYhnYX4tWAT2AsdJ4bnNe1Mta5uLi_JssWffvH2QNPTQ/viewform" target="_blank">RSVP HERE</a></u></strong></p>
+    </div>
+    <p class="rsvp-note">The RSVP deadline is April 1st, 2026</p>
 
     <div id="nav">
-        <a href="index.html" class="nav-btn current">HOME</a>
-        <a href="schedule.html" class="nav-btn">SCHEDULE</a>
-        <a href="things-to-do.html" class="nav-btn">THINGS TO DO</a>
-        <a href="faq.html" class="nav-btn">FAQs</a>
+        <a href="index.html" class="current">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="about.html">About Us</a>
+        <span class="nav-sep">|</span>
+        <a href="schedule.html">Schedule</a>
+        <span class="nav-sep">|</span>
+        <a href="things-to-do.html">Things to Do</a>
+        <span class="nav-sep">|</span>
+        <a href="camp-burton.html">Camp Burton</a>
+        <span class="nav-sep">|</span>
+        <a href="faq.html">FAQs</a>
     </div>
 
     <div id="main">
 
-        <div id="welcome-section">
-            <h2>Welcome!</h2>
+        <div id="col-full">
+
+            <h1 class="page-heading">Welcome!</h1>
             <p>We are so excited to spend an entire weekend with our friends and family!</p>
             <p>We have several events planned, but also left some &ldquo;flexi&rdquo; time during the day on Saturday for guests to explore the island.</p>
             <p>Arrival and departure are flexible based on your needs&nbsp;/&nbsp;travel arrangements. We understand that not everyone may be able to join for both nights so please let us know if that is the case.</p>
-        </div>
 
-        <hr>
-
-        <div id="photo-preview">
-            <h2>A Peek at Chris and Celia</h2>
-            <div class="photo-grid">
-                <!-- Drop your photos into the images/ folder and update the src paths below -->
-                <div class="photo-cell"><img src="images/photo1.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
-                <div class="photo-cell"><img src="images/photo2.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
-                <div class="photo-cell"><img src="images/photo3.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
-                <div class="photo-cell"><img src="images/photo4.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
-                <div class="photo-cell"><img src="images/photo5.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
-                <div class="photo-cell"><img src="images/photo6.jpg" alt="Chris and Celia" onerror="this.parentElement.innerHTML='photo'"></div>
-            </div>
-            <a href="#" class="view-photos-link">View all photos &raquo;</a>
         </div>
 
     </div>
 
     <div id="footer">
-        <p class="hit-counter-label">Visitor Count</p>
-        <div id="hit-counter-display"><span id="hit-count">01247</span></div>
-        <p style="margin-top:10px;">&copy; Chris De La Fuente &amp; Celia McTigue &nbsp;&middot;&nbsp; 2026</p>
-        <p class="footer-note">Best viewed in Internet Explorer 6.0 at 800&times;600 resolution</p>
+        <p>&copy; Chris De La Fuente &amp; Celia McTigue &nbsp;&middot;&nbsp; 2026</p>
     </div>
 
 </div>
 
 <script src="js/countdown.js"></script>
+
+<div id="bouncing-heart">
+    <img src="images/chromeheart.png" alt="Chrome Heart" id="heart-img">
+</div>
+
 <script>
-    var stored = parseInt(localStorage.getItem('ccw_visits') || '1247');
-    stored++;
-    localStorage.setItem('ccw_visits', stored);
-    document.getElementById('hit-count').textContent = String(stored).padStart(5, '0');
+(function () {
+    var el  = document.getElementById('bouncing-heart');
+    var img = document.getElementById('heart-img');
+    var speed = 2.5;
+    var angle = (Math.random() * 60 + 15) * (Math.PI / 180);
+    var dx = Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+    var dy = Math.sin(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+    var x = Math.random() * (window.innerWidth - 300);
+    var y = Math.random() * (window.innerHeight - 300);
+    var rotation = 0;
+    var spinning = false;
+
+    el.style.left = x + 'px';
+    el.style.top  = y + 'px';
+
+    el.addEventListener('click', function () {
+        if (spinning) return;
+        spinning = true;
+        rotation += 360;
+        img.style.transition = 'transform 0.5s ease';
+        img.style.transform = 'rotate(' + rotation + 'deg)';
+        setTimeout(function () { spinning = false; }, 520);
+    });
+
+    function bounce() {
+        var iw = el.offsetWidth;
+        var ih = el.offsetHeight;
+        var vw = window.innerWidth;
+        var vh = window.innerHeight;
+
+        x += dx;
+        y += dy;
+
+        if (x <= 0)        { x = 0;       dx =  Math.abs(dx); }
+        if (x + iw >= vw)  { x = vw - iw; dx = -Math.abs(dx); }
+        if (y <= 0)        { y = 0;       dy =  Math.abs(dy); }
+        if (y + ih >= vh)  { y = vh - ih; dy = -Math.abs(dy); }
+
+        el.style.left = x + 'px';
+        el.style.top  = y + 'px';
+        requestAnimationFrame(bounce);
+    }
+
+    if (img.complete) {
+        bounce();
+    } else {
+        img.addEventListener('load', bounce);
+    }
+})();
 </script>
 
 </body>

@@ -5,146 +5,236 @@
     <meta name="viewport" content="width=780">
     <title>Things To Do :: Chris &amp; Celia 2026</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-heading  { font-size: 43px; }
+        .places-intro  { font-size: 22px; }
+        .place-name    { font-size: 25px; }
+        .place-address { font-size: 19px; }
+        .place-desc    { font-size: 22px; }
+    </style>
 </head>
 <body>
 
-<div id="wrapper">
-
-    <marquee class="top-marquee" behavior="scroll" direction="left" scrollamount="3">
-        ★ EXPLORE VASHON ISLAND ★ BAKERIES &middot; ICE CREAM &middot; THRIFT SHOPS &middot; WINERIES &middot; LIGHTHOUSES ★ FREE TIME SATURDAY 11AM &ndash; 4PM ★
-    </marquee>
-
-    <div id="header">
+<div id="header">
+    <div id="header-photo">
+        <img src="images/header-photo.jpg" alt="Chris and Celia"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none;">[ photo ]</div>
+    </div>
+    <div id="header-info">
         <div class="site-title">Chris &amp; Celia</div>
-        <p class="wedding-info">May 30, 2026 &nbsp;&nbsp;·&nbsp;&nbsp; Vashon Island, Washington</p>
+        <p class="wedding-info">May 30, 2026 &nbsp;&middot;&nbsp; Vashon Island, Washington</p>
         <div id="countdown">
-            <span id="cd-days">--</span>d &nbsp;
-            <span id="cd-hours">--</span>h &nbsp;
-            <span id="cd-mins">--</span>min &nbsp;
-            <span id="cd-secs">--</span>s
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-days"><span class="cd-tile">-</span><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">days</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-hours"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">hrs</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-mins"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">min</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-secs"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">sec</span>
+            </div>
         </div>
     </div>
+    <div id="header-spacer"></div>
+</div>
+
+<div id="wrapper">
+
+    <div id="please-note">
+        <p><strong><u><a href="https://docs.google.com/forms/d/e/1FAIpQLSfmuHdYhnYX4tWAT2AsdJ4bnNe1Mta5uLi_JssWffvH2QNPTQ/viewform" target="_blank">RSVP HERE</a></u></strong></p>
+    </div>
+    <p class="rsvp-note">The RSVP deadline is April 1st, 2026</p>
 
     <div id="nav">
-        <a href="index.html" class="nav-btn">HOME</a>
-        <a href="schedule.html" class="nav-btn">SCHEDULE</a>
-        <a href="things-to-do.html" class="nav-btn current">THINGS TO DO</a>
-        <a href="faq.html" class="nav-btn">FAQs</a>
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="about.html">About Us</a>
+        <span class="nav-sep">|</span>
+        <a href="schedule.html">Schedule</a>
+        <span class="nav-sep">|</span>
+        <a href="things-to-do.html" class="current">Things to Do</a>
+        <span class="nav-sep">|</span>
+        <a href="camp-burton.html">Camp Burton</a>
+        <span class="nav-sep">|</span>
+        <a href="faq.html">FAQs</a>
     </div>
 
     <div id="main">
+        <div id="col-full">
 
-        <h1 class="page-heading">Things To Do on Vashon</h1>
-        <p class="places-intro">We&rsquo;ve left free time on Saturday afternoon for you to explore the island. Here are some of our favourite spots:</p>
+            <h1 class="page-heading">Things To Do on Vashon</h1>
+            <p class="places-intro">We&rsquo;ve left free time on Saturday afternoon for you to explore the island. Here are some of our favourite spots:</p>
 
-        <!-- SNAPDRAGON — photo left -->
-        <div class="place-item">
-            <div class="place-photo">
-                <!-- Replace with: <div class="place-photo-box"><img src="images/snapdragon.jpg" alt="Snapdragon"></div> -->
-                <div class="place-photo-placeholder">🥐<span>photo coming</span></div>
+            <!-- SNAPDRAGON -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Snapdragon</div>
+                <div class="place-address">17817 Vashon Highway SW, Vashon, WA 98070</div>
+                <p class="place-desc">Great bakery and lunch spot! Highly recommend! They have a little patio out back to eat too which we recommend.</p>
             </div>
-            <div class="place-name">Snapdragon</div>
-            <div class="place-address">17817 Vashon Highway SW, Vashon, WA 98070</div>
-            <p class="place-desc">Great bakery and lunch spot! Highly recommend! They have a little patio out back to eat too which we recommend.</p>
-        </div>
 
-        <!-- GLASS BOTTLE CREAMERY — photo right -->
-        <div class="place-item reverse">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">🍦<span>photo coming</span></div>
+            <!-- GLASS BOTTLE CREAMERY -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Glass Bottle Creamery</div>
+                <div class="place-address">17616 Vashon Highway SW, Vashon, WA 98070</div>
+                <p class="place-desc">Delicious ice cream!</p>
             </div>
-            <div class="place-name">Glass Bottle Creamery</div>
-            <div class="place-address">17616 Vashon Highway SW, Vashon, WA 98070</div>
-            <p class="place-desc">Delicious ice cream!</p>
-        </div>
 
-        <!-- ANU RANA'S — photo left -->
-        <div class="place-item">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">☕<span>photo coming</span></div>
+            <!-- ANU RANA'S -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Anu Rana&rsquo;s Healthy Kitchen</div>
+                <div class="place-address">17610 99th Avenue SW, Vashon, WA 98070</div>
+                <p class="place-desc">Delicious Chai and drinks! Keep an eye out for the fridge in the back with homemade curries and such. Dare I say grab a few items before heading back to the mainland?</p>
             </div>
-            <div class="place-name">Anu Rana&rsquo;s Healthy Kitchen</div>
-            <div class="place-address">17610 99th Avenue SW, Vashon, WA 98070</div>
-            <p class="place-desc">Delicious Chai and drinks! Keep an eye out for the fridge in the back with homemade curries and such. Dare I say grab a few items before heading back to the mainland?</p>
-        </div>
 
-        <!-- GRANNY'S ATTIC — photo right -->
-        <div class="place-item reverse">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">👗<span>photo coming</span></div>
+            <!-- GRANNY'S ATTIC -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Granny&rsquo;s Attic Thrift Shop</div>
+                <div class="place-address">17707 100th Avenue SW, Vashon, WA 98070</div>
+                <p class="place-desc">Chris and I are big thrifters!</p>
             </div>
-            <div class="place-name">Granny&rsquo;s Attic Thrift Shop</div>
-            <div class="place-address">17707 100th Avenue SW, Vashon, WA 98070</div>
-            <p class="place-desc">Chris and I are big thrifters!</p>
-        </div>
 
-        <!-- SWEET ALYSSUM FARM — photo left -->
-        <div class="place-item">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">🌸<span>photo coming</span></div>
+            <!-- SWEET ALYSSUM FARM -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Sweet Alyssum Farm</div>
+                <div class="place-address">17628 94th Avenue SW, Vashon, WA 98070</div>
+                <p class="place-desc">U-Pick flowers!</p>
             </div>
-            <div class="place-name">Sweet Alyssum Farm</div>
-            <div class="place-address">17628 94th Avenue SW, Vashon, WA 98070</div>
-            <p class="place-desc">U-Pick flowers!</p>
-        </div>
 
-        <!-- POINT ROBINSON LIGHTHOUSE — photo right -->
-        <div class="place-item reverse">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">🏛️<span>photo coming</span></div>
+            <!-- POINT ROBINSON LIGHTHOUSE -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Point Robinson Lighthouse</div>
+                <div class="place-address">3705 SW Point Robinson Road, Vashon, WA 98070</div>
+                <p class="place-desc">Enjoy this park, the lighthouse and the troll!</p>
             </div>
-            <div class="place-name">Point Robinson Lighthouse</div>
-            <div class="place-address">3705 SW Point Robinson Road, Vashon, WA 98070</div>
-            <p class="place-desc">Enjoy this park, the lighthouse and the troll!</p>
-        </div>
 
-        <!-- CAMP COLVOS BREWING — photo left -->
-        <div class="place-item">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">🍺<span>photo coming</span></div>
+            <!-- CAMP COLVOS BREWING -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Camp Colvos Brewing</div>
+                <div class="place-address">17636 Vashon Highway SW, Vashon, WA 98070</div>
+                <p class="place-desc">For the beer drinkers!</p>
             </div>
-            <div class="place-name">Camp Colvos Brewing</div>
-            <div class="place-address">17636 Vashon Highway SW, Vashon, WA 98070</div>
-            <p class="place-desc">For the beer drinkers!</p>
-        </div>
 
-        <!-- PALOUSE WINERY — photo right -->
-        <div class="place-item reverse">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">🍷<span>photo coming</span></div>
+            <!-- PALOUSE WINERY -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Palouse Winery</div>
+                <div class="place-address">12431 Vashon Highway SW, Vashon, WA 98070</div>
+                <p class="place-desc">If wine is your thing!</p>
             </div>
-            <div class="place-name">Palouse Winery</div>
-            <div class="place-address">12431 Vashon Highway SW, Vashon, WA 98070</div>
-            <p class="place-desc">If wine is your thing!</p>
-        </div>
 
-        <!-- NASHI ORCHARDS — photo left -->
-        <div class="place-item">
-            <div class="place-photo">
-                <div class="place-photo-placeholder">🍎<span>photo coming</span></div>
+            <!-- NASHI ORCHARDS -->
+            <div class="place-item">
+                <div class="place-photo">
+                    <div class="place-photo-placeholder">photo coming</div>
+                </div>
+                <div class="place-name">Nashi Orchards Tasting Room</div>
+                <div class="place-address">16906 107th Avenue SW, Vashon, WA 98070</div>
+                <p class="place-desc">If cider is your thing!</p>
             </div>
-            <div class="place-name">Nashi Orchards Tasting Room</div>
-            <div class="place-address">16906 107th Avenue SW, Vashon, WA 98070</div>
-            <p class="place-desc">If cider is your thing!</p>
-        </div>
 
+        </div>
     </div>
 
     <div id="footer">
-        <p class="hit-counter-label">Visitor Count</p>
-        <div id="hit-counter-display"><span id="hit-count">01247</span></div>
-        <p style="margin-top:10px;">&copy; Chris De La Fuente &amp; Celia McTigue &nbsp;&middot;&nbsp; 2026</p>
-        <p class="footer-note">Best viewed in Internet Explorer 6.0 at 800&times;600 resolution</p>
+        <p>&copy; Chris De La Fuente &amp; Celia McTigue &nbsp;&middot;&nbsp; 2026</p>
     </div>
 
 </div>
 
 <script src="js/countdown.js"></script>
 <script>
-    var stored = parseInt(localStorage.getItem('ccw_visits') || '1247');
-    stored++;
-    localStorage.setItem('ccw_visits', stored);
-    document.getElementById('hit-count').textContent = String(stored).padStart(5, '0');
+    document.querySelectorAll('.place-photo-placeholder, .place-photo-box').forEach(function (el) {
+        el.addEventListener('click', function () {
+            el.classList.toggle('expanded');
+        });
+    });
+</script>
+
+<div id="bouncing-heart">
+    <img src="images/chromeheart.png" alt="Chrome Heart" id="heart-img">
+</div>
+
+<script>
+(function () {
+    var el  = document.getElementById('bouncing-heart');
+    var img = document.getElementById('heart-img');
+    var speed = 2.5;
+    var angle = (Math.random() * 60 + 15) * (Math.PI / 180);
+    var dx = Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+    var dy = Math.sin(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+    var x = Math.random() * (window.innerWidth - 300);
+    var y = Math.random() * (window.innerHeight - 300);
+    var rotation = 0;
+    var spinning = false;
+
+    el.style.left = x + 'px';
+    el.style.top  = y + 'px';
+
+    el.addEventListener('click', function () {
+        if (spinning) return;
+        spinning = true;
+        rotation += 360;
+        img.style.transition = 'transform 0.5s ease';
+        img.style.transform = 'rotate(' + rotation + 'deg)';
+        setTimeout(function () { spinning = false; }, 520);
+    });
+
+    function bounce() {
+        var iw = el.offsetWidth;
+        var ih = el.offsetHeight;
+        var vw = window.innerWidth;
+        var vh = window.innerHeight;
+
+        x += dx;
+        y += dy;
+
+        if (x <= 0)        { x = 0;       dx =  Math.abs(dx); }
+        if (x + iw >= vw)  { x = vw - iw; dx = -Math.abs(dx); }
+        if (y <= 0)        { y = 0;       dy =  Math.abs(dy); }
+        if (y + ih >= vh)  { y = vh - ih; dy = -Math.abs(dy); }
+
+        el.style.left = x + 'px';
+        el.style.top  = y + 'px';
+        requestAnimationFrame(bounce);
+    }
+
+    if (img.complete) {
+        bounce();
+    } else {
+        img.addEventListener('load', bounce);
+    }
+})();
 </script>
 
 </body>

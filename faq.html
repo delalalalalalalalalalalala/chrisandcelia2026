@@ -5,103 +5,185 @@
     <meta name="viewport" content="width=780">
     <title>FAQs :: Chris &amp; Celia 2026</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-heading { font-size: 43px; }
+        .faq-q        { font-size: 22px; }
+        .faq-a        { font-size: 22px; }
+    </style>
 </head>
 <body>
 
-<div id="wrapper">
-
-    <marquee class="top-marquee" behavior="scroll" direction="left" scrollamount="3">
-        ★ RSVP DEADLINE: APRIL 1, 2026 ★ NO GIFT REGISTRY ★ DRESS CODE: COCKTAIL ATTIRE WITH A FUN TWIST ★ QUESTIONS? REACH OUT TO CHRIS OR CELIA ★
-    </marquee>
-
-    <div id="header">
+<div id="header">
+    <div id="header-photo">
+        <img src="images/header-photo.jpg" alt="Chris and Celia"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none;">[ photo ]</div>
+    </div>
+    <div id="header-info">
         <div class="site-title">Chris &amp; Celia</div>
-        <p class="wedding-info">May 30, 2026 &nbsp;&nbsp;·&nbsp;&nbsp; Vashon Island, Washington</p>
+        <p class="wedding-info">May 30, 2026 &nbsp;&middot;&nbsp; Vashon Island, Washington</p>
         <div id="countdown">
-            <span id="cd-days">--</span>d &nbsp;
-            <span id="cd-hours">--</span>h &nbsp;
-            <span id="cd-mins">--</span>min &nbsp;
-            <span id="cd-secs">--</span>s
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-days"><span class="cd-tile">-</span><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">days</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-hours"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">hrs</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-mins"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">min</span>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-tiles" id="cd-secs"><span class="cd-tile">-</span><span class="cd-tile">-</span></div>
+                <span class="cd-label">sec</span>
+            </div>
         </div>
     </div>
+    <div id="header-spacer"></div>
+</div>
+
+<div id="wrapper">
+
+    <div id="please-note">
+        <p><strong><u><a href="https://docs.google.com/forms/d/e/1FAIpQLSfmuHdYhnYX4tWAT2AsdJ4bnNe1Mta5uLi_JssWffvH2QNPTQ/viewform" target="_blank">RSVP HERE</a></u></strong></p>
+    </div>
+    <p class="rsvp-note">The RSVP deadline is April 1st, 2026</p>
 
     <div id="nav">
-        <a href="index.html" class="nav-btn">HOME</a>
-        <a href="schedule.html" class="nav-btn">SCHEDULE</a>
-        <a href="things-to-do.html" class="nav-btn">THINGS TO DO</a>
-        <a href="faq.html" class="nav-btn current">FAQs</a>
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="about.html">About Us</a>
+        <span class="nav-sep">|</span>
+        <a href="schedule.html">Schedule</a>
+        <span class="nav-sep">|</span>
+        <a href="things-to-do.html">Things to Do</a>
+        <span class="nav-sep">|</span>
+        <a href="camp-burton.html">Camp Burton</a>
+        <span class="nav-sep">|</span>
+        <a href="faq.html" class="current">FAQs</a>
     </div>
 
     <div id="main">
+        <div id="col-full">
 
-        <h1 class="page-heading">FAQs</h1>
+            <h1 class="page-heading">FAQs</h1>
 
-        <div class="faq-section">
-            <div class="faq-q">When is the RSVP deadline?</div>
-            <div class="faq-a">We greatly appreciate guests submitting their RSVPs as soon as possible. However, please submit your RSVP no later than <strong>April 1, 2026</strong>.</div>
-        </div>
-
-        <div class="faq-section">
-            <div class="faq-q">I am coming from out of town. Where should I stay?</div>
-            <div class="faq-a">
-                <p>We have cabins and rooms available at Camp Burton. These cabins have bunk beds and a bathroom (think <em>The Parent Trap</em> not <em>Troop Beverly Hills</em>). The rooms are part of the Camp&rsquo;s &ldquo;retreat center&rdquo; and have 3 single beds and a private bathroom in a hotel-like room. Please note, retreat center rooms are extremely limited so we will prioritize older folks and those that are not &ldquo;outdoorsy.&rdquo;</p>
-                <p>We will collect lodging preferences in the RSVP. As soon as we receive a majority of RSVPs, we will reach out to guests with their accommodation assignment&nbsp;/&nbsp;option.</p>
-                <p>If you don&rsquo;t like the accommodation you have been assigned, you are welcome to book offsite accommodation. We would recommend renting an Airbnb on Vashon! If you want any further tips on where to stay or help choosing an Airbnb please reach out to us. We are happy to help!</p>
+            <div class="faq-section">
+                <div class="faq-q">When is the RSVP deadline?</div>
+                <div class="faq-a">We greatly appreciate guests submitting their RSVPs as soon as possible. However, please submit your RSVP no later than <strong>April 1, 2026</strong>.</div>
             </div>
-        </div>
 
-        <div class="faq-section">
-            <div class="faq-q">If I stay onsite, will I be guaranteed my preferred accommodation?</div>
-            <div class="faq-a">Unfortunately, we cannot guarantee your preferred accommodation, but we will do our best to match you to your desired space.</div>
-        </div>
+            <div class="faq-section">
+                <div class="faq-q">I am coming from out of town. Where should I stay?</div>
+                <div class="faq-a">
+                    <p>We have cabins and rooms available at Camp Burton. These cabins have bunk beds and a bathroom (think <em>The Parent Trap</em> not <em>Troop Beverly Hills</em>). The rooms are part of the Camp&rsquo;s &ldquo;retreat center&rdquo; and have 3 single beds and a private bathroom in a hotel-like room. Please note, retreat center rooms are extremely limited so we will prioritize older folks and those that are not &ldquo;outdoorsy.&rdquo;</p>
+                    <p>We will collect lodging preferences in the RSVP. As soon as we receive a majority of RSVPs, we will reach out to guests with their accommodation assignment&nbsp;/&nbsp;option.</p>
+                    <p>If you don&rsquo;t like the accommodation you have been assigned, you are welcome to book offsite accommodation. We would recommend renting an Airbnb on Vashon! If you want any further tips on where to stay or help choosing an Airbnb please reach out to us. We are happy to help!</p>
+                </div>
+            </div>
 
-        <div class="faq-section">
-            <div class="faq-q">I want to book accommodation as soon as possible. When will I hear from you?</div>
-            <div class="faq-a">As soon as we get a majority of RSVPs by late March&nbsp;/&nbsp;early April we will reach out to folks with their accommodation options &mdash; the sooner you RSVP, the sooner we can figure out accommodation! If you are in a rush or would like to make plans sooner, please don&rsquo;t hesitate to reach out to Chris or Celia.</div>
-        </div>
+            <div class="faq-section">
+                <div class="faq-q">If I stay onsite, will I be guaranteed my preferred accommodation?</div>
+                <div class="faq-a">Unfortunately, we cannot guarantee your preferred accommodation, but we will do our best to match you to your desired space.</div>
+            </div>
 
-        <div class="faq-section">
-            <div class="faq-q">What will the weather be like?</div>
-            <div class="faq-a">Hopefully sunny! However, that is not always the case here in the PNW so please check the weather and pack accordingly. Keep in mind the nights (sunny or not) are quite cool in the PNW.</div>
-        </div>
+            <div class="faq-section">
+                <div class="faq-q">I want to book accommodation as soon as possible. When will I hear from you?</div>
+                <div class="faq-a">As soon as we get a majority of RSVPs by late March&nbsp;/&nbsp;early April we will reach out to folks with their accommodation options &mdash; the sooner you RSVP, the sooner we can figure out accommodation! If you are in a rush or would like to make plans sooner, please don&rsquo;t hesitate to reach out to Chris or Celia.</div>
+            </div>
 
-        <div class="faq-section">
-            <div class="faq-q">Is the wedding indoors or outdoors?</div>
-            <div class="faq-a">Our wedding ceremony is outdoors (or indoors pending weather) but the reception will be inside.</div>
-        </div>
+            <div class="faq-section">
+                <div class="faq-q">What will the weather be like?</div>
+                <div class="faq-a">Hopefully sunny! However, that is not always the case here in the PNW so please check the weather and pack accordingly. Keep in mind the nights (sunny or not) are quite cool in the PNW.</div>
+            </div>
 
-        <div class="faq-section">
-            <div class="faq-q">What if I have dietary restrictions?</div>
-            <div class="faq-a">For any special dietary requirements, please let us know on the RSVP.</div>
-        </div>
+            <div class="faq-section">
+                <div class="faq-q">Is the wedding indoors or outdoors?</div>
+                <div class="faq-a">Our wedding ceremony is outdoors (or indoors pending weather) but the reception will be inside.</div>
+            </div>
 
-        <div class="faq-section">
-            <div class="faq-q">Do you have a registry?</div>
-            <div class="faq-a">We do not have a gift registry, however, we will have a table for cards and such at the wedding. We always appreciate little handmade gifts from our friends as well. But please, do not feel obligated to bring a gift &mdash; we are just excited to spend time with you!</div>
-        </div>
+            <div class="faq-section">
+                <div class="faq-q">What if I have dietary restrictions?</div>
+                <div class="faq-a">For any special dietary requirements, please let us know on the RSVP.</div>
+            </div>
 
-        <div class="faq-section">
-            <div class="faq-q">What is the dress code for the wedding?</div>
-            <div class="faq-a">The dress code is dress to impress :) Think cocktail attire but with a fun twist. However, please dress in whatever is most comfortable for you.</div>
-        </div>
+            <div class="faq-section">
+                <div class="faq-q">Do you have a registry?</div>
+                <div class="faq-a">We do not have a gift registry, however, we will have a table for cards and such at the wedding. We always appreciate little handmade gifts from our friends as well. But please, do not feel obligated to bring a gift &mdash; we are just excited to spend time with you!</div>
+            </div>
 
+            <div class="faq-section">
+                <div class="faq-q">What is the dress code for the wedding?</div>
+                <div class="faq-a">The dress code is dress to impress :) Think cocktail attire but with a fun twist. However, please dress in whatever is most comfortable for you.</div>
+            </div>
+
+        </div>
     </div>
 
     <div id="footer">
-        <p class="hit-counter-label">Visitor Count</p>
-        <div id="hit-counter-display"><span id="hit-count">01247</span></div>
-        <p style="margin-top:10px;">&copy; Chris De La Fuente &amp; Celia McTigue &nbsp;&middot;&nbsp; 2026</p>
-        <p class="footer-note">Best viewed in Internet Explorer 6.0 at 800&times;600 resolution</p>
+        <p>&copy; Chris De La Fuente &amp; Celia McTigue &nbsp;&middot;&nbsp; 2026</p>
     </div>
 
 </div>
 
 <script src="js/countdown.js"></script>
+
+<div id="bouncing-heart">
+    <img src="images/chromeheart.png" alt="Chrome Heart" id="heart-img">
+</div>
+
 <script>
-    var stored = parseInt(localStorage.getItem('ccw_visits') || '1247');
-    stored++;
-    localStorage.setItem('ccw_visits', stored);
-    document.getElementById('hit-count').textContent = String(stored).padStart(5, '0');
+(function () {
+    var el  = document.getElementById('bouncing-heart');
+    var img = document.getElementById('heart-img');
+    var speed = 2.5;
+    var angle = (Math.random() * 60 + 15) * (Math.PI / 180);
+    var dx = Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+    var dy = Math.sin(angle) * speed * (Math.random() > 0.5 ? 1 : -1);
+    var x = Math.random() * (window.innerWidth - 300);
+    var y = Math.random() * (window.innerHeight - 300);
+    var rotation = 0;
+    var spinning = false;
+
+    el.style.left = x + 'px';
+    el.style.top  = y + 'px';
+
+    el.addEventListener('click', function () {
+        if (spinning) return;
+        spinning = true;
+        rotation += 360;
+        img.style.transition = 'transform 0.5s ease';
+        img.style.transform = 'rotate(' + rotation + 'deg)';
+        setTimeout(function () { spinning = false; }, 520);
+    });
+
+    function bounce() {
+        var iw = el.offsetWidth;
+        var ih = el.offsetHeight;
+        var vw = window.innerWidth;
+        var vh = window.innerHeight;
+
+        x += dx;
+        y += dy;
+
+        if (x <= 0)        { x = 0;       dx =  Math.abs(dx); }
+        if (x + iw >= vw)  { x = vw - iw; dx = -Math.abs(dx); }
+        if (y <= 0)        { y = 0;       dy =  Math.abs(dy); }
+        if (y + ih >= vh)  { y = vh - ih; dy = -Math.abs(dy); }
+
+        el.style.left = x + 'px';
+        el.style.top  = y + 'px';
+        requestAnimationFrame(bounce);
+    }
+
+    if (img.complete) {
+        bounce();
+    } else {
+        img.addEventListener('load', bounce);
+    }
+})();
 </script>
 
 </body>
