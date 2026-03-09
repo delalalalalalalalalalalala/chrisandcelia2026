@@ -26,9 +26,8 @@ body {
 /* ---- HEADER: photo bleeds left, title centered ---- */
 #header {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
-    padding-bottom: 35px;
 }
 
 #header-photo {
