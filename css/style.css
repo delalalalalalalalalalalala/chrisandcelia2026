@@ -20,7 +20,7 @@ body {
 /* ---- CONTAINER ---- */
 #wrapper {
     width: 988px;
-    margin: 0 auto;
+    margin: -35px auto 0;
 }
 
 /* ---- HEADER: photo bleeds left, title centered ---- */
