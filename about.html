@@ -9,36 +9,50 @@
         .page-heading { font-size: 43px; }
         .places-intro { font-size: 22px; }
         .about-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            columns: 3;
+            column-gap: 8px;
             margin-top: 16px;
         }
         .about-photo {
-            width: 100%;
-            aspect-ratio: 1;
-            background: #e8e8e8;
+            break-inside: avoid;
+            margin-bottom: 8px;
             border: 1px solid #aaa;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.35s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 14px;
-            color: #aaa;
         }
         .about-photo img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
+            transition: opacity 0.2s ease;
         }
-        .about-photo.expanded {
-            grid-column: 1 / -1;
-            aspect-ratio: unset;
-            height: 520px;
+        .about-photo:hover img {
+            opacity: 0.85;
+        }
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 9998;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox-img {
+            max-width: 90vw;
+            max-height: 90vh;
+            display: block;
+            border: 1px solid #555;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #lightbox-img.visible {
+            opacity: 1;
         }
     </style>
 </head>
@@ -130,12 +144,29 @@
 
 </div>
 
+<div id="lightbox">
+    <img id="lightbox-img" src="" alt="Chris and Celia">
+</div>
+
 <script src="js/countdown.js"></script>
 <script>
+    var lightbox    = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+
     document.querySelectorAll('.about-photo').forEach(function (el) {
         el.addEventListener('click', function () {
-            el.classList.toggle('expanded');
+            var src = el.querySelector('img').src;
+            lightboxImg.classList.remove('visible');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            lightboxImg.onload = function () { lightboxImg.classList.add('visible'); };
+            if (lightboxImg.complete) lightboxImg.classList.add('visible');
         });
+    });
+
+    lightbox.addEventListener('click', function () {
+        lightboxImg.classList.remove('visible');
+        setTimeout(function () { lightbox.classList.remove('active'); }, 300);
     });
 </script>
 
