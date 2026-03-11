@@ -9,8 +9,65 @@
         .page-heading { font-size: 43px; }
         p             { font-size: 22px; }
     </style>
+    <style>
+        #intro-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            display: flex;
+            z-index: 9999;
+            pointer-events: all;
+        }
+        .intro-panel {
+            width: 50vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            transition: transform 1.1s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        .intro-panel img {
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+        #intro-right img {
+            left: -50vw;
+        }
+        #intro-overlay.open #intro-left  { transform: translateX(-100%); }
+        #intro-overlay.open #intro-right { transform: translateX(100%); }
+        .intro-heart.fade-out { opacity: 0 !important; transition: opacity 0.8s ease; }
+
+        .intro-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            font-size: 24px;
+            opacity: 0;
+            animation: heartFloat 2.2s ease-out forwards;
+            user-select: none;
+        }
+        @keyframes heartFloat {
+            0%   { opacity: 0;   transform: translateY(0)   scale(0.5); }
+            20%  { opacity: 0.9; transform: translateY(-15px) scale(1); }
+            80%  { opacity: 0.7; transform: translateY(-70px) scale(1); }
+            100% { opacity: 0;   transform: translateY(-110px) scale(0.8); }
+        }
+    </style>
 </head>
 <body>
+
+<div id="intro-overlay">
+    <div class="intro-panel" id="intro-left">
+        <img src="images/intro-photo.jpg" alt="">
+    </div>
+    <div class="intro-panel" id="intro-right">
+        <img src="images/intro-photo.jpg" alt="">
+    </div>
+</div>
 
 <div id="header">
     <div id="header-photo">
@@ -55,11 +112,11 @@
         <span class="nav-sep">|</span>
         <a href="about">About Us</a>
         <span class="nav-sep">|</span>
+        <a href="location">Location</a>
+        <span class="nav-sep">|</span>
         <a href="schedule">Schedule</a>
         <span class="nav-sep">|</span>
-        <a href="things-to-do">Things to Do</a>
-        <span class="nav-sep">|</span>
-        <a href="camp-burton">Camp Burton</a>
+        <a href="things-to-do">Things to Do on Vashon</a>
         <span class="nav-sep">|</span>
         <a href="faq">FAQs</a>
     </div>
@@ -68,10 +125,8 @@
 
         <div id="col-full">
 
-            <h1 class="page-heading">Welcome!</h1>
-            <p>We are so excited to spend an entire weekend with our friends and family!</p>
-            <p>We have several events planned, but also left some &ldquo;flexi&rdquo; time during the day on Saturday for guests to explore the island.</p>
-            <p>Arrival and departure are flexible based on your needs&nbsp;/&nbsp;travel arrangements. We understand that not everyone may be able to join for both nights so please let us know if that is the case.</p>
+            <h1 class="page-heading">We&rsquo;re getting hitched!</h1>
+            <p>We are so excited to celebrate with the people we love most. Take a look around to find all the details about the wedding. If you have any questions, check out the <a href="faq">FAQ</a> &mdash; and if you still can&rsquo;t find what you&rsquo;re looking for, just reach out!</p>
 
         </div>
 
@@ -82,6 +137,102 @@
     </div>
 
 </div>
+
+<script>
+(function () {
+    var overlay = document.getElementById('intro-overlay');
+    if (!overlay) return;
+    if (sessionStorage.getItem('introShown')) {
+        overlay.style.display = 'none';
+        return;
+    }
+    sessionStorage.setItem('introShown', '1');
+
+    var spawnInterval;
+    var kissInterval;
+    var audioCtx;
+
+    function playKiss() {
+        try {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            var ctx = audioCtx;
+            var now = ctx.currentTime;
+
+            // Noise smack
+            var bufLen = Math.floor(ctx.sampleRate * 0.09);
+            var buf = ctx.createBuffer(1, bufLen, ctx.sampleRate);
+            var d = buf.getChannelData(0);
+            for (var i = 0; i < bufLen; i++) {
+                d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufLen, 2.5);
+            }
+            var noise = ctx.createBufferSource();
+            noise.buffer = buf;
+            var bpf = ctx.createBiquadFilter();
+            bpf.type = 'bandpass';
+            bpf.frequency.value = 1400;
+            bpf.Q.value = 1.2;
+            var ng = ctx.createGain();
+            ng.gain.setValueAtTime(0.5, now);
+            ng.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+            noise.connect(bpf); bpf.connect(ng); ng.connect(ctx.destination);
+            noise.start(now);
+
+            // "Mwah" tone sweep
+            var osc = ctx.createOscillator();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(700, now);
+            osc.frequency.exponentialRampToValueAtTime(180, now + 0.22);
+            var og = ctx.createGain();
+            og.gain.setValueAtTime(0.18, now);
+            og.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+            osc.connect(og); og.connect(ctx.destination);
+            osc.start(now); osc.stop(now + 0.25);
+        } catch (e) {}
+    }
+
+    function scheduleKiss() {
+        playKiss();
+        kissInterval = setTimeout(scheduleKiss, 350 + Math.random() * 500);
+    }
+
+    function stopKisses() {
+        clearTimeout(kissInterval);
+        if (audioCtx) { try { audioCtx.close(); } catch(e){} }
+    }
+
+    function spawnHeart() {
+        var h = document.createElement('div');
+        h.className = 'intro-heart';
+        h.textContent = '💋';
+        var size = (80 + Math.random() * 140);
+        h.style.fontSize = size + 'px';
+        h.style.left = (Math.random() * 92) + 'vw';
+        h.style.top  = (20 + Math.random() * 65) + 'vh';
+        h.style.animationDuration = (1.6 + Math.random() * 1.2) + 's';
+        h.style.animationDelay = (Math.random() * 0.3) + 's';
+        document.body.appendChild(h);
+        setTimeout(function () { if (h.parentNode) h.parentNode.removeChild(h); }, 3500);
+    }
+
+    spawnInterval = setInterval(spawnHeart, 180);
+    scheduleKiss();
+
+    setTimeout(function () {
+        clearInterval(spawnInterval);
+        stopKisses();
+        overlay.classList.add('open');
+        // Fade lips out 2 seconds after doors open
+        setTimeout(function () {
+            document.querySelectorAll('.intro-heart').forEach(function(h){ h.classList.add('fade-out'); });
+            setTimeout(function () {
+                overlay.remove();
+                document.querySelectorAll('.intro-heart').forEach(function(h){ h.remove(); });
+            }, 900);
+        }, 2000);
+    }, 2000);
+})();
+</script>
 
 <script src="js/countdown.js"></script>
 <script>
