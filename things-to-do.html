@@ -204,18 +204,18 @@
 <script>
 (function () {
     var places = [
-        { name: 'Snapdragon',                  address: '17817 Vashon Highway SW, Vashon, WA 98070' },
-        { name: 'Glass Bottle Creamery',        address: '17616 Vashon Highway SW, Vashon, WA 98070' },
-        { name: "Anu Rana's Healthy Kitchen",   address: '17610 Vashon Highway SW, Vashon, WA 98070' },
-        { name: "Granny's Attic Thrift Shop",   address: '17707 100th Avenue SW, Vashon, WA 98070' },
-        { name: 'Sweet Alyssum Farm',            address: '17628 94th Avenue SW, Vashon, WA 98070' },
-        { name: 'Point Robinson Lighthouse',     address: '3705 SW Point Robinson Road, Vashon, WA 98070', lat: 47.38813, lng: -122.37439 },
-        { name: 'Camp Colvos Brewing',           address: '17636 Vashon Highway SW, Vashon, WA 98070' },
-        { name: 'Palouse Winery',                address: '12431 Vashon Highway SW, Vashon, WA 98070' },
-        { name: 'Nashi Orchards Tasting Room',   address: '16906 107th Avenue SW, Vashon, WA 98070', lat: 47.453469, lng: -122.470274 },
-        { name: 'Fence of Doors',                address: '17429 Vashon Hwy SW, Vashon, WA 98070' },
-        { name: 'H.A. + CO.',                    address: '24012 Vashon Hwy SW, Vashon, WA 98070' },
-        { name: 'Golden Afternoon',              address: '17600 Vashon Hwy SW, Vashon, WA 98070' }
+        { name: 'Snapdragon',                  address: '17817 Vashon Highway SW, Vashon, WA 98070',     lat: 47.4443,    lng: -122.4604 },
+        { name: 'Glass Bottle Creamery',        address: '17616 Vashon Highway SW, Vashon, WA 98070',     lat: 47.4466,    lng: -122.4602 },
+        { name: "Anu Rana's Healthy Kitchen",   address: '17610 Vashon Highway SW, Vashon, WA 98070',     lat: 47.4467,    lng: -122.4602 },
+        { name: "Granny's Attic Thrift Shop",   address: '17707 100th Avenue SW, Vashon, WA 98070',       lat: 47.4456,    lng: -122.4620 },
+        { name: 'Sweet Alyssum Farm',            address: '17628 94th Avenue SW, Vashon, WA 98070',        lat: 47.4464,    lng: -122.4571 },
+        { name: 'Point Robinson Lighthouse',     address: '3705 SW Point Robinson Road, Vashon, WA 98070', lat: 47.38813,   lng: -122.37439 },
+        { name: 'Camp Colvos Brewing',           address: '17636 Vashon Highway SW, Vashon, WA 98070',     lat: 47.4464189, lng: -122.4601624 },
+        { name: 'Palouse Winery',                address: '12431 Vashon Highway SW, Vashon, WA 98070',     lat: 47.493832,  lng: -122.46938 },
+        { name: 'Nashi Orchards Tasting Room',   address: '16906 107th Avenue SW, Vashon, WA 98070',       lat: 47.453469,  lng: -122.470274 },
+        { name: 'Fence of Doors',                address: '17429 Vashon Hwy SW, Vashon, WA 98070',         lat: 47.4479,    lng: -122.4601 },
+        { name: 'H.A. + CO.',                    address: '24012 Vashon Hwy SW, Vashon, WA 98070',         lat: 47.3820,    lng: -122.4640 },
+        { name: 'Golden Afternoon',              address: '17600 Vashon Hwy SW Suite B, Vashon, WA 98070', lat: 47.4469,    lng: -122.4602 }
     ];
 
     var map = L.map('places-map').setView([47.408, -122.463], 13);
@@ -225,41 +225,21 @@
     }).addTo(map);
 
     var bounds = [];
-    var loaded = 0;
 
-    function addMarker(place, i, lat, lng) {
-        bounds.push([lat, lng]);
+    places.forEach(function (place, i) {
+        bounds.push([place.lat, place.lng]);
         var icon = L.divIcon({
             className: '',
             html: '<div style="background:#333;color:#fff;border-radius:50%;width:26px;height:26px;line-height:26px;text-align:center;font-family:serif;font-size:13px;font-weight:bold;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.4)">' + (i + 1) + '</div>',
             iconSize: [26, 26],
             iconAnchor: [13, 13]
         });
-        L.marker([lat, lng], { icon: icon })
+        L.marker([place.lat, place.lng], { icon: icon })
             .addTo(map)
             .bindPopup('<strong>' + place.name + '</strong><br>' + place.address);
-        loaded++;
-        if (loaded === places.length && bounds.length > 1) {
-            map.fitBounds(bounds, { padding: [30, 30] });
-        }
-    }
-
-    places.forEach(function (place, i) {
-        if (place.lat && place.lng) {
-            addMarker(place, i, place.lat, place.lng);
-            return;
-        }
-        var url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(place.address);
-        setTimeout(function () {
-            fetch(url, { headers: { 'Accept-Language': 'en' } })
-                .then(function (r) { return r.json(); })
-                .then(function (data) {
-                    if (!data || !data[0]) return;
-                    addMarker(place, i, parseFloat(data[0].lat), parseFloat(data[0].lon));
-                })
-                .catch(function () {});
-        }, i * 300);
     });
+
+    map.fitBounds(bounds, { padding: [30, 30] });
 })();
 </script>
 
